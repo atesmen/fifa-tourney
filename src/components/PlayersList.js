@@ -34,13 +34,13 @@ export default function PlayersList() {
     }
   });
   console.log('players', players);
+  const playersArr = Object.values(newPlayersObj).map((player) => {
+    return <Player player={player} />;
+  });
   return (
     <section className='PlayerList'>
       <h1>Current participant players</h1>
-      <Player player={newPlayersObj.id1} />
-      <Player player={newPlayersObj.id2} />
-      <Player player={newPlayersObj.id3} />
-      <Player player={newPlayersObj.id4} />
+      {playersArr}
     </section>
   );
 }
